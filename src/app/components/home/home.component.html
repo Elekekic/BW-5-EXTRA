@@ -1,0 +1,25 @@
+<!-- <div *ngIf="!caricamento"> -->
+  <div *ngFor="let cliente of clienti">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Ragione sociale: {{cliente.ragioneSociale}}</h5>
+        <p class="card-text">Nome contatto: {{cliente.nomeContatto}}<br>
+          Cognome contatto: {{cliente.cognomeContatto}}<br>
+          Email: {{cliente.emailContatto}}<br>
+          Fatturato: {{cliente.fatturatoAnnuale}}<br>
+          Via: {{cliente.indirizzi[0].via}} n° {{cliente.indirizzi[0].civico}}<br>
+          Civico: {{cliente.indirizzi[0].civico}}<br>
+          Cap: {{cliente.indirizzi[0].cap}}<br>
+          Località: {{cliente.indirizzi[0].localita}}<br>
+          Comune: {{cliente.indirizzi[0].comune.denominazione}}<br>
+          Tipo Indirizzo:{{cliente.indirizzi[0].tipoIndirizzo}}<br>
+          {{cliente.telefono}}<br>
+          {{cliente.tipoCliente}}<br>
+          {{cliente.pec}}<br>
+        </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
