@@ -12,6 +12,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { AuthService } from './auth/auth.service';
+import { FattureComponent } from './components/fatture/fatture.component';
 
 const routes: Route[] = [
   {
@@ -25,6 +26,10 @@ const routes: Route[] = [
   {
     path: 'signup',
     component: SignupComponent,
+  },
+  {
+    path: 'fatture',
+    component: FattureComponent,
   }
 ]
 
@@ -34,7 +39,8 @@ const routes: Route[] = [
     NavbarComponent,
     HomeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    FattureComponent
   ],
   imports: [
     BrowserModule,

@@ -1,40 +1,10 @@
-<div class="container-fluid  mx-0 px-5 pb-5">
-  <div class="row w-100 my-4">
-    <h1 class="text-center text-black-50 display-2 fw-semibold">Clienti</h1>
-  </div>
-  <div class="row mt-3 mx-0 d-flex justify-content-evenly">
-    <div class="col-3" *ngFor="let cliente of clienti">
-      <div class="card shadow-lg" style="width: 20rem;">
-        <div class="card-body">
-          <h5 class="card-title fw-semibold">Cliente con id: {{cliente.id}}</h5>
-          <p class="card-text">
-            Ragione sociale: {{cliente.ragioneSociale}}<br>
-            Nome contatto: {{cliente.nomeContatto}}<br>
-            Cognome contatto: {{cliente.cognomeContatto}}<br>
-            Email: {{cliente.emailContatto}}<br>
-            Fatturato: {{cliente.fatturatoAnnuale}}<br>
-            Via: {{cliente.indirizzi[0].via}} n° {{cliente.indirizzi[0].civico}}<br>
-            Civico: {{cliente.indirizzi[0].civico}}<br>
-            Cap: {{cliente.indirizzi[0].cap}}<br>
-            Località: {{cliente.indirizzi[0].localita}}<br>
-            Comune: {{cliente.indirizzi[0].comune.denominazione}}<br>
-            Tipo Indirizzo:{{cliente.indirizzi[0].tipoIndirizzo}}<br>
-            {{cliente.telefono}}<br>
-            {{cliente.tipoCliente}}<br>
-            {{cliente.pec}}<br>
-          </p>
-          <button class="btn btn-outline-dark" type="button" data-bs-toggle="offcanvas" [attr.data-bs-target]="'#offcanvasExample' + cliente.id" aria-controls="offcanvasExample">
-          Vedi Fatture
-        </button>
-          <ng-container *ngFor="let fattura of fatture">
-          
-          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample{{cliente.id}}" aria-labelledby="offcanvasExampleLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Fatture del cliente con id: {{cliente.id}}</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <div class="card mx-2 shadow-lg" style="width: 22rem; height: 120%;">
+<div class="container-fluid mx-0 px-5 pb-5">
+    <div class="row w-100 my-5">
+        <h1 class="text-center text-black-50 display-2 fw-semibold">Fatture</h1>
+    </div>
+    <div class="row my-5 w-100 p-0 mx-auto d-flex justify-content-around">
+        <div class="col-4 mx-auto p-0 d-flex justify-content-center align-items-center" *ngFor="let fattura of fatture">
+            <div class="card mx-2 shadow-lg" style="width: 22rem; height: 120%;">
                 <div class="card-header bg-white m-0 p-3">
                     <h5 class="card-title fw-semibold">Numero Fattura: {{fattura.numeroFattura}}</h5>
                 </div>
@@ -94,11 +64,6 @@
                     </div>
                 </div>
             </div>
-            </div>
-          </div>
-          </ng-container>
         </div>
-      </div>
     </div>
-  </div>
 </div>

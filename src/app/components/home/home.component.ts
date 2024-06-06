@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/interfaces/cliente';
+import { Fatture } from 'src/app/interfaces/fatture';
 import { ClientiServiceService } from 'src/app/services/clienti-service.service';
+import { FattureService } from 'src/app/services/fatture.service';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +11,11 @@ import { ClientiServiceService } from 'src/app/services/clienti-service.service'
 })
 export class HomeComponent implements OnInit {
   clienti: Cliente[] = [];
+  fatture: Fatture[] = [];
   risposta:any;
   caricamento = true;
 
-  constructor(private clienteSrv: ClientiServiceService) {}
+  constructor(private clienteSrv: ClientiServiceService, private fatturaSrv: FattureService) {}
 
   ngOnInit(): void {
     setTimeout(() => {
@@ -22,6 +25,16 @@ export class HomeComponent implements OnInit {
           this.risposta = data;
           this.clienti=this.risposta.content;
           console.log(this.clienti);
+        },
+        (error) => {
+          console.error('There was an error!', error);
+        }
+      );
+      this.fatturaSrv.getFatture().subscribe(
+        (data) => {
+          this.risposta = data;
+          this.fatture = this.risposta.content;
+          console.log(this.fatture);
         },
         (error) => {
           console.error('There was an error!', error);
