@@ -11,7 +11,7 @@
                     <a class="nav-link text-dark  rounded-4" aria-current="page" [routerLink]="['/']" routerLinkActive="active"
                         [routerLinkActiveOptions]="{ exact: true }">Home <i class="bi bi-house"></i> </a>
                 </li>
-                <li class="nav-item" *ngIf="user">
+                <li class="nav-item" *ngIf="user" >
                     <a class="nav-link text-dark rounded-4" aria-current="page" [routerLink]="['/movies']"
                         routerLinkActive="active">Film</a>
                 </li>
