@@ -4,7 +4,7 @@ import { Route, RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
@@ -13,10 +13,15 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { AuthService } from './auth/auth.service';
 import { FattureComponent } from './components/fatture/fatture.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 const routes: Route[] = [
   {
     path: '',
+    component: LandingPageComponent,
+  },
+  {
+    path: 'home',
     component: HomeComponent,
   },
   {
@@ -40,11 +45,11 @@ const routes: Route[] = [
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    FattureComponent
+    FattureComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule, 
     FormsModule, 
     RouterModule.forRoot(routes),

@@ -20,7 +20,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   signup(data: SignUp) {
-    return this.http.post(`${this.apiURL}register`, data)
+    return this.http.post(`${this.apiURL}signup`, data)
   }
 
   login(data: { email: string, password: string }) {
