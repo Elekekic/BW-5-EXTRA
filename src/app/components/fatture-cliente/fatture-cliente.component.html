@@ -3,8 +3,7 @@
         <h1 class="text-center display-2 fw-semibold">Fatture del cliente</h1>
     </div>
     <div class="row my-5 w-100 p-0 mx-auto d-flex justify-content-around">
-        <div class="col-4 mx-auto p-0 d-flex justify-content-center align-items-center"
-         *ngFor="let fattura of fatture">
+        <div class="col-4 mx-auto p-0 d-flex justify-content-center align-items-center" *ngFor="let fattura of fatture">
             <div class="card mx-2 shadow-lg" style="width: 22rem; height: 120%;">
                 <div class="rounded-4 bg-white pt-4 ps-3">
                     <h5 class="card-title fw-semibold">Numero Fattura: {{fattura.numeroFattura}}</h5>
@@ -18,7 +17,7 @@
                     </div>
                     <div class="h-100 d-flex align-items-end" style="width: 45%;">
                         <button type="button" class="btn btn-outline-dark shadow-lg" data-bs-toggle="modal"
-                        [attr.data-bs-target]="'#exampleModal' + fattura.numeroFattura">
+                            [attr.data-bs-target]="'#exampleModal' + fattura.numeroFattura">
                             Dettagli Fattura
                         </button>
                     </div>
@@ -35,9 +34,9 @@
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content" [style.border]="'1px solid transparent'">
-                                <div class="modal-header bg-secondary">
-                                    <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Dettagli Fattura</h1>
-                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                <div class="modal-header bg-secondary-subtle">
+                                    <h1 class="modal-title fs-5 fw-medium" id="exampleModalLabel">Dettagli Fattura</h1>
+                                    <button type="button" class="btn-close btn-close-black" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body bg-secondary-subtle p-5">
@@ -55,8 +54,8 @@
                                         Cliente Ragione Sociale: {{fattura.cliente.ragioneSociale}}<br>
                                     </p>
                                 </div>
-                                <div class="modal-footer bg-secondary">
-                                    <button type="button" class="btn btn-outline-light shadow"
+                                <div class="modal-footer bg-secondary-subtle">
+                                    <button type="button" class="btn btn-outline-dark"
                                         data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>

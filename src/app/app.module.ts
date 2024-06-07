@@ -15,6 +15,7 @@ import { AuthService } from './auth/auth.service';
 import { FattureComponent } from './components/fatture/fatture.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { FattureClienteComponent } from './components/fatture-cliente/fatture-cliente.component';
+import { AggiungiFattureComponent } from './components/aggiungi-fatture/aggiungi-fatture.component';
 
 const routes: Route[] = [
   {
@@ -40,6 +41,10 @@ const routes: Route[] = [
   {
     path: 'fatture-cliente/:id',
     component: FattureClienteComponent,
+  },
+  {
+    path: 'aggiungi-fatture',
+    component: AggiungiFattureComponent,
   }
 ]
 
@@ -52,7 +57,8 @@ const routes: Route[] = [
     SignupComponent,
     FattureComponent,
     LandingPageComponent,
-    FattureClienteComponent
+    FattureClienteComponent,
+    AggiungiFattureComponent
   ],
   imports: [
     BrowserModule,
