@@ -14,6 +14,7 @@ import { TokenInterceptor } from './auth/token.interceptor';
 import { AuthService } from './auth/auth.service';
 import { FattureComponent } from './components/fatture/fatture.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { FattureClienteComponent } from './components/fatture-cliente/fatture-cliente.component';
 
 const routes: Route[] = [
   {
@@ -35,6 +36,10 @@ const routes: Route[] = [
   {
     path: 'fatture',
     component: FattureComponent,
+  },
+  {
+    path: 'fatture-cliente/:id',
+    component: FattureClienteComponent,
   }
 ]
 
@@ -46,7 +51,8 @@ const routes: Route[] = [
     LoginComponent,
     SignupComponent,
     FattureComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    FattureClienteComponent
   ],
   imports: [
     BrowserModule,

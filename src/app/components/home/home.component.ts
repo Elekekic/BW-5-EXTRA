@@ -11,7 +11,8 @@ import { FattureService } from 'src/app/services/fatture.service';
 })
 export class HomeComponent implements OnInit {
   clienti: Cliente[] = [];
-  fatture: Fatture[] = [];
+  fatture: { [clienteId: number]: Fatture[] } = {};
+  //fatture: Fatture[];
   risposta:any;
   caricamento = true;
 
@@ -44,5 +45,14 @@ export class HomeComponent implements OnInit {
     setTimeout(() => {
       this.caricamento = false;
     }, 1000);
+  }
+
+  loadFatture(clienteId: number): void {
+    if (!this.fatture[clienteId]) {
+      this.fatturaSrv.getFattureByClienteId(clienteId).subscribe((data: Fatture[]) => {
+        this.fatture[clienteId] = data;
+        console.log(this.fatture[clienteId]);
+      });
+    }
   }
 }

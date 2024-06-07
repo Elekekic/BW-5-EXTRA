@@ -20,10 +20,11 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   signup(data: SignUp) {
-    return this.http.post(`${this.apiURL}signup`, data)
+    return this.http.post(`${this.apiURL}signup`, data, {responseType:'text'})
   }
 
   login(data: { email: string, password: string }) {
+    console.log("prova service")
     return this.http.post<AuthData>(`${this.apiURL}login`, data).pipe(
       tap((data) => {
         alert('Login effettuato.')

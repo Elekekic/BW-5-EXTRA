@@ -28,6 +28,7 @@ export class FattureComponent implements OnInit {
         }
       );
     }, 500);
+    
     setTimeout(() => {
       this.caricamento = false;
     }, 1000);
